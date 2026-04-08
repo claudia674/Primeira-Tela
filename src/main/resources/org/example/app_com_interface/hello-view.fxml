@@ -4,15 +4,19 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.app_com_interface.HelloController">
    <center>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField promptText="Usuário">
+            <TextField fx:id="txtUsuario" promptText="Usuário">
                <VBox.margin>
                   <Insets left="100.0" right="100.0" />
-               </VBox.margin></TextField>
-            <PasswordField promptText="Senha">
+               </VBox.margin>
+               <tooltip>
+                  <Tooltip text="Digite seu nome completo ex: João da Silva" />
+               </tooltip>
+            </TextField>
+            <PasswordField fx:id="txtSenha" promptText="Senha">
                <VBox.margin>
                   <Insets left="100.0" right="100.0" />
                </VBox.margin></PasswordField>
@@ -22,7 +26,8 @@
                   <Hyperlink text="Criar conta" />
                </children>
             </HBox>
-            <Button mnemonicParsing="false" text="Button" />
+            <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#onButtonLoginClick" text="Login" />
+            <Label fx:id="labelLogin" textFill="#00ff1e" />
          </children>
       </VBox>
    </center>
