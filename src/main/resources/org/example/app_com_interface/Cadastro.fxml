@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="156.0" layoutY="84.0" prefHeight="200.0" prefWidth="304.0">
+         <children>
+            <VBox layoutX="2.0" prefHeight="200.0" prefWidth="304.0">
+               <children>
+                  <TextField promptText="USUÁRIO">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin></TextField>
+                  <TextField promptText="SENHA">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin></TextField>
+                  <TextField promptText="CONFIRMAR SENHA">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin></TextField>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button mnemonicParsing="false" text="VOLTAR">
+                           <HBox.margin>
+                              <Insets top="20.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding></Button>
+                        <Button alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" text="CRIAR CONTA">
+                           <HBox.margin>
+                              <Insets left="100.0" top="20.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding></Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children></Pane>
+      <Label layoutX="277.0" layoutY="46.0" text="CRIE SUA CONTA" />
+   </children>
+</Pane>

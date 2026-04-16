@@ -6,9 +6,9 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@css/estilo.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.app_com_interface.HelloController">
    <center>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="549.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="txtUsuario" promptText="Usuário">
+            <TextField fx:id="txtUsuario" prefHeight="25.0" prefWidth="100.0" promptText="Usuário">
                <VBox.margin>
                   <Insets left="100.0" right="100.0" />
                </VBox.margin>
@@ -16,22 +16,25 @@
                   <Tooltip text="Digite seu nome completo ex: João da Silva" />
                </tooltip>
             </TextField>
-            <PasswordField fx:id="txtSenha" promptText="Senha">
+            <PasswordField fx:id="txtSenha" prefWidth="100.0" promptText="Senha">
                <VBox.margin>
                   <Insets left="100.0" right="100.0" />
                </VBox.margin></PasswordField>
-            <HBox alignment="CENTER" prefHeight="26.0" prefWidth="400.0" spacing="35.0">
+            <HBox alignment="CENTER" prefHeight="26.0" prefWidth="314.0" spacing="35.0">
                <children>
                   <CheckBox mnemonicParsing="false" text="Lembrar senha" />
-                  <Hyperlink text="Criar conta" />
+                  <Hyperlink onAction="#irParaTelaDeCadastro" text="Criar conta" />
                </children>
+               <VBox.margin>
+                  <Insets right="100.0" />
+               </VBox.margin>
             </HBox>
             <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#onButtonLoginClick" styleClass="btn-primario" text="Login" />
             <Label fx:id="labelLogin" textFill="#00ff1e" />
          </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
       </VBox>
    </center>
-   <left>
-      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
-   </left>
 </BorderPane>
