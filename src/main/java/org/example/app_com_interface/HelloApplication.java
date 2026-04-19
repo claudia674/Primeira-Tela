@@ -1,5 +1,6 @@
 package org.example.app_com_interface;
 
+import atlantafx.base.theme.PrimerLight;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -13,6 +14,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         primaryStage = stage;
+        Application.setUserAgentStylesheet(new PrimerLight().getUserAgentStylesheet());
 
         // Carrega a tela inicial
         trocadorDeTelas("Login.fxml");
