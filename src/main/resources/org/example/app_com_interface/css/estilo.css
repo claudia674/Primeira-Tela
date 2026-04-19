@@ -1,0 +1,11 @@
+.btn-primario{
+    -fx-background-color: #4fa6e5;
+    -fx-text-fill: white;
+    -fx-background-radius: 8px;
+    -fx-font-weight: bold;
+
+}
+
+.btn-primario:hover {
+    -fx-background-color: #4338ca;
+}
