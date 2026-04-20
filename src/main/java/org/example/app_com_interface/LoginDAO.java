@@ -1,8 +1,8 @@
 package org.example.app_com_interface;
 
-<<<<<<< HEAD
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class LoginDAO {
@@ -18,50 +18,45 @@ public class LoginDAO {
         } catch (SQLException e) {
             throw new RuntimeException("Erro ao criar", e);
         }
-=======
-import java.sql.*;
-
-public class LoginDAO {
-
+    }
     public boolean autenticar(String nomeDigitado, String senhaDigitada) {
 
-        // 🔹 LOGIN SEM BANCO (pra funcionar agora)
-        if (nomeDigitado.equals("claudia") && senhaDigitada.equals("12345")) {
-            return true;
-        }
+                // 🔹 LOGIN SEM BANCO (pra funcionar agora)
+                if (nomeDigitado.equals("claudia") && senhaDigitada.equals("12345")) {
+                    return true;
+                }
 
-        // 🔹 CÓDIGO DO PROFESSOR (mantido)
-        String sql = "SELECT senha FROM usuarios WHERE nome = ?";
+                // 🔹 CÓDIGO DO PROFESSOR (mantido)
+                String sql = "SELECT senha FROM usuarios WHERE nome = ?";
 
-        try (
-                Connection conn = DatabaseConfig.getConnection();
-                PreparedStatement stmt = conn.prepareStatement(sql)
-        ) {
+                try (
+                        Connection conn = DatabaseConfig.getConnection();
+                        PreparedStatement stmt = conn.prepareStatement(sql)
+                ) {
 
-            stmt.setString(1, nomeDigitado);
+                    stmt.setString(1, nomeDigitado);
 
-            try (ResultSet rs = stmt.executeQuery()) {
+                    try (ResultSet rs = stmt.executeQuery()) {
 
-                if (rs.next()) {
+                        if (rs.next()) {
 
-                    String senhaDoBanco = rs.getString("senha").trim();
+                            String senhaDoBanco = rs.getString("senha").trim();
 
-                    if (senhaDigitada.equals(senhaDoBanco)) {
-                        return true; // senha correta
-                    } else {
-                        return false; // senha incorreta
+                            if (senhaDigitada.equals(senhaDoBanco)) {
+                                return true; // senha correta
+                            } else {
+                                return false; // senha incorreta
+                            }
+
+                        } else {
+                            return false; // usuário não encontrado
+                        }
                     }
 
-                } else {
-                    return false; // usuário não encontrado
+                } catch (SQLException e) {
+                    System.out.println("Erro ao autenticar usuario: " + e.getMessage());
+                    return false;
                 }
-            }
-
-        } catch (SQLException e) {
-            System.out.println("Erro ao autenticar usuario: " + e.getMessage());
-        }
-
-        return false;
->>>>>>> 91fbd1fba846cb64341be728e6681f4fec1dd9d0
     }
 }
+
